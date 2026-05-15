@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "schedule": "Schedule",
+    "home": "Home"
+  },
+  "hero": {
+    "title": "Gym & training hall",
+    "description": "Workouts for all levels. Flexible schedule and experienced coaches.",
+    "cta": "View schedule"
+  },
+  "schedule": {
+    "title": "Training schedule",
+    "placeholder": "Schedule content will be added soon."
+  },
+  "footer": {
+    "contacts": "Contacts",
+    "phones": "Phones",
+    "social": "Social media",
+    "address": "Gym address",
+    "mapTitle": "Gym location"
+  },
+  "lang": {
+    "ro": "RO",
+    "en": "EN"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "schedule": "Program",
+    "home": "Acasă"
+  },
+  "hero": {
+    "title": "Sala de sport",
+    "description": "Antrenamente pentru toate nivelurile. Program flexibil și antrenori experimentați.",
+    "cta": "Vezi programul"
+  },
+  "schedule": {
+    "title": "Program antrenamente",
+    "placeholder": "Conținutul programului va fi adăugat în curând."
+  },
+  "footer": {
+    "contacts": "Contacte",
+    "phones": "Telefoane",
+    "social": "Rețele sociale",
+    "address": "Adresa sălii",
+    "mapTitle": "Locația sălii"
+  },
+  "lang": {
+    "ro": "RO",
+    "en": "EN"
+  }
+}
