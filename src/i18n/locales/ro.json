@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "about": "Cine Suntem",
+    "schedule": "Program",
+    "coaches": "Antrenori",
+    "home": "Acasă"
+  },
+  "hero": {
+    "carouselLabel": "Banner principal",
+    "prev": "Slide anterior",
+    "next": "Slide următor",
+    "dot": "Slide {{n}}",
+    "slides": [
+      {
+        "title": "Urban Fight Academy",
+        "description": "Antrenamente pentru toate nivelurile. Comunitate puternică, antrenori experimentați."
+      },
+      {
+        "title": "Program flexibil",
+        "description": "Găsește ora potrivită pentru tine. De la începători la avansați."
+      },
+      {
+        "title": "Trup · Minte · Spirit",
+        "description": "Mai mult decât o sală — un stil de viață și o echipă care te susține."
+      }
+    ]
+  },
+  "about": {
+    "title": "Cine Suntem",
+    "motto": "Trup · Minte · Spirit",
+    "lead": "Urban Fight Academy este o sală de arte marțiale din București, construită în jurul antrenamentului real — de la primul antrenament până la nivel de competiție.",
+    "body": "Pentru adulți avem Box, MMA, BJJ și Kickboxing, cu grupe de începători, avansați și pro. Pentru copii — BJJ, Kickboxing, Judo și Karate. Există posibilitatea antrenamentelor individuale. Suntem deschiși la colaborări și la deschiderea de grupuri noi. Prima ședință de grup este gratuită; detaliile le actualizăm odată cu informațiile de la club.",
+    "disciplinesTitle": "Ce antrenăm",
+    "disciplines": {
+      "box": {
+        "name": "Box",
+        "note": "Dimineață & seară"
+      },
+      "mma": {
+        "name": "MMA",
+        "note": "Pro & începători"
+      },
+      "bjj": {
+        "name": "BJJ",
+        "note": "Începători & avansați"
+      },
+      "kickboxing": {
+        "name": "Kickboxing",
+        "note": "Antrenamente de seară"
+      },
+      "sparring": {
+        "name": "Sparring",
+        "note": "Sesiuni dedicate"
+      }
+    },
+    "memberships": {
+      "title": "Abonamente",
+      "subtitle": "Prețuri pentru 30 de zile. Consultați programul sălii pentru a alege disciplinele.",
+      "freeTrial": "Prima ședință este gratuită",
+      "adultsTitle": "Adulți",
+      "kidsTitle": "Copii",
+      "kidsNote": "Grupe de copii:",
+      "kidsPrice": "300 lei / disciplină",
+      "discount6": "reducere la abonament 6 luni",
+      "discount12": "reducere la abonament 12 luni",
+      "seeSchedule": "Vezi programul sălii",
+      "adults": {
+        "single": { "label": "1 intrare", "price": "50 lei" },
+        "one": { "label": "1 disciplină", "price": "300 lei" },
+        "two": { "label": "2 discipline", "price": "450 lei" },
+        "unlimited": { "label": "Intrare generală", "price": "500 lei" }
+      },
+      "kidsDisciplines": {
+        "bjj": "BJJ",
+        "kickboxing": "Kickboxing",
+        "judo": "Judo",
+        "karate": "Karate"
+      }
+    }
+  },
+  "schedule": {
+    "eyebrow": "Program",
+    "title": "Program antrenamente",
+    "subtitle": "Orarul săptămânal al sălii. Verifică ziua și ora potrivită pentru disciplina ta.",
+    "note": "Programul poate fi actualizat. Pentru detalii, contactează sala.",
+    "prev": "Înapoi",
+    "next": "Înainte",
+    "page": "{{current}} / {{total}}",
+    "days": {
+      "monday": "Luni",
+      "tuesday": "Marți",
+      "wednesday": "Miercuri",
+      "thursday": "Joi",
+      "friday": "Vineri"
+    },
+    "classes": {
+      "box": "Box",
+      "mmaPro": "MMA Pro",
+      "mmaBeginners": "MMA Începători",
+      "bjjBeginners": "BJJ Începători",
+      "bjjAdvanced": "BJJ Avansați",
+      "kickboxing": "Kickboxing",
+      "sparringMmaPro": "Sparring MMA Pro",
+      "sparringKickboxing": "Sparring Kickboxing",
+      "sparringBjj": "Sparring BJJ"
+    }
+  },
+  "coaches": {
+    "title": "Antrenori",
+    "subtitle": "Echipa sălii — datele și fotografiile vor fi actualizate cu informațiile de la club.",
+    "prev": "Antrenori anteriori",
+    "next": "Antrenori următori",
+    "dot": "Grup {{n}}",
+    "list": [
+      { "name": "Antrenor Box", "role": "Antrenor Box" },
+      { "name": "Antrenor MMA", "role": "Antrenor MMA" },
+      { "name": "Antrenor BJJ", "role": "Antrenor BJJ" },
+      { "name": "Antrenor Kickboxing", "role": "Antrenor Kickboxing" },
+      { "name": "Antrenor Copii", "role": "Antrenor grupe copii" }
+    ]
+  },
+  "footer": {
+    "contacts": "Contacte",
+    "phones": "Telefon",
+    "social": "Rețele sociale",
+    "address": "Adresa sălii",
+    "mapTitle": "Locația sălii",
+    "copied": "Copiat",
+    "copyHint": "Apasă pentru a copia"
+  },
+  "lang": {
+    "ro": "RO",
+    "en": "EN"
+  }
+}
