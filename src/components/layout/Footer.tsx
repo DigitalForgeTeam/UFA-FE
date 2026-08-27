@@ -1,11 +1,13 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const PHONES = ['+373 00 000 000', '+373 00 000 001']
-const ADDRESS = 'Str. Exemplu 1, Chișinău, Moldova'
+const PHONE = '+40 745 047 160'
+const ADDRESS = 'Strada Rușețu nr. 4, Sector 6, București'
 const MAP_EMBED_SRC =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.8!2d28.8638!3d47.0105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDAwJzM3LjgiTiAyOMKwNTEnNDkuNyJF!5e0!3m2!1sro!2smd!4v1'
-const INSTAGRAM_URL = 'https://instagram.com/'
-const WHATSAPP_URL = 'https://wa.me/37300000000'
+  'https://maps.google.com/maps?q=Strada%20Ru%C8%99e%C8%9Bu%20nr.%204%2C%20Sector%206%2C%20Bucure%C8%99ti&output=embed'
+const INSTAGRAM_URL = 'https://www.instagram.com/urbanfightacademy.ro'
+const WHATSAPP_URL = 'https://wa.me/40745047160'
+const TIKTOK_URL = 'https://www.tiktok.com/@urbanfightacademy.ro'
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -37,67 +39,117 @@ function WhatsAppIcon({ className }: { className?: string }) {
   )
 }
 
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.19 8.19 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+  )
+}
+
+function CopyableText({
+  value,
+  className,
+}: {
+  value: string
+  className?: string
+}) {
+  const { t } = useTranslation()
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1600)
+    } catch {
+      const el = document.createElement('textarea')
+      el.value = value
+      el.setAttribute('readonly', '')
+      el.style.position = 'fixed'
+      el.style.left = '-9999px'
+      document.body.appendChild(el)
+      el.select()
+      document.execCommand('copy')
+      document.body.removeChild(el)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1600)
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => void handleCopy()}
+      title={t('footer.copyHint')}
+      aria-label={`${value}. ${t('footer.copyHint')}`}
+      className={`group relative max-w-full cursor-pointer rounded-md text-left transition-colors hover:text-sky-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 ${className ?? ''}`}
+    >
+      <span className="underline decoration-slate-300 underline-offset-4 group-hover:decoration-sky-400">
+        {value}
+      </span>
+      {copied && (
+        <span className="ml-2 inline-block align-middle text-sm font-medium text-sky-600 no-underline">
+          {t('footer.copied')}
+        </span>
+      )}
+    </button>
+  )
+}
+
+const socialLinks = [
+  { href: INSTAGRAM_URL, label: 'Instagram', Icon: InstagramIcon },
+  { href: WHATSAPP_URL, label: 'WhatsApp', Icon: WhatsAppIcon },
+  { href: TIKTOK_URL, label: 'TikTok', Icon: TikTokIcon },
+] as const
+
 export function Footer() {
   const { t } = useTranslation()
 
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-16">
-        <div className="flex flex-col justify-between gap-8">
-          <div>
-            <h2 className="text-lg font-bold uppercase tracking-wide text-slate-900">
-              {t('footer.contacts')}
-            </h2>
-            <p className="mt-2 text-sm text-slate-600">{ADDRESS}</p>
+        <div>
+          <h2 className="text-lg font-bold uppercase tracking-wide text-slate-900">
+            {t('footer.contacts')}
+          </h2>
+          <CopyableText
+            value={ADDRESS}
+            className="mt-3 block text-base font-medium leading-snug text-slate-900 sm:text-lg"
+          />
 
-            <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-700">
-              {t('footer.phones')}
-            </h3>
-            <ul className="mt-2 space-y-1">
-              {PHONES.map((phone) => (
-                <li key={phone}>
-                  <a
-                    href={`tel:${phone.replace(/\s/g, '')}`}
-                    className="text-slate-800 hover:text-sky-700"
-                  >
-                    {phone}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-700">
+            {t('footer.phones')}
+          </h3>
+          <CopyableText
+            value={PHONE}
+            className="mt-2 block text-base font-semibold tracking-wide text-slate-900 sm:text-lg"
+          />
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-700">
-              {t('footer.social')}
-            </h3>
-            <ul className="mt-3 flex flex-wrap gap-4">
-              <li>
+          <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-700">
+            {t('footer.social')}
+          </h3>
+          <ul className="mt-3 flex flex-col gap-3">
+            {socialLinks.map(({ href, label, Icon }) => (
+              <li key={label}>
                 <a
-                  href={INSTAGRAM_URL}
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-slate-800 transition-colors hover:text-sky-700"
-                  aria-label="Instagram"
+                  aria-label={label}
                 >
-                  <InstagramIcon className="h-[22px] w-[22px]" />
-                  <span className="text-sm font-medium">Instagram</span>
+                  <Icon className="h-[22px] w-[22px] shrink-0" />
+                  <span className="text-sm font-medium">{label}</span>
                 </a>
               </li>
-              <li>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-slate-800 transition-colors hover:text-sky-700"
-                  aria-label="WhatsApp"
-                >
-                  <WhatsAppIcon className="h-[22px] w-[22px]" />
-                  <span className="text-sm font-medium">WhatsApp</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
         </div>
 
         <div>

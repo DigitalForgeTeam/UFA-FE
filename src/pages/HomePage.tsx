@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { Header } from '../components/layout/Header'
 import { Footer } from '../components/layout/Footer'
 import { Hero } from '../components/home/Hero'
+import { AboutSection } from '../components/home/AboutSection'
 import { ScheduleSection } from '../components/home/ScheduleSection'
+import { CoachesSection } from '../components/home/CoachesSection'
 
 export function HomePage() {
   const { i18n } = useTranslation()
@@ -17,7 +19,9 @@ export function HomePage() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <AboutSection />
         <ScheduleSection />
+        <CoachesSection />
       </main>
       <Footer />
     </div>

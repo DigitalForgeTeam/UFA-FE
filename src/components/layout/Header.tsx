@@ -4,14 +4,18 @@ import { Menu, X } from 'lucide-react'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { scrollToSection } from '../../lib/scrollTo'
 
-const LOGO_SRC = '/images/logo-placeholder-160x48.png'
+const LOGO_SRC = `${import.meta.env.BASE_URL}images/logo.png`
 
 type NavItem = {
   id: string
   labelKey: string
 }
 
-const navItems: NavItem[] = [{ id: 'schedule', labelKey: 'nav.schedule' }]
+const navItems: NavItem[] = [
+  { id: 'about', labelKey: 'nav.about' },
+  { id: 'schedule', labelKey: 'nav.schedule' },
+  { id: 'coaches', labelKey: 'nav.coaches' },
+]
 
 export function Header() {
   const { t } = useTranslation()
@@ -23,11 +27,13 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
-      <div className="mx-auto grid h-16 max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 overflow-visible border-b border-slate-200 bg-white/95 backdrop-blur-sm">
+      <div className="relative mx-auto flex h-16 max-w-6xl items-center gap-4 overflow-visible px-4 sm:px-6 lg:px-8">
+        {/* Width reserved in flow; brand is absolute so header stays h-16 */}
+        <div className="w-[140px] shrink-0 sm:w-[160px]" aria-hidden />
         <a
           href="#hero"
-          className="shrink-0"
+          className="absolute top-1/2 left-4 z-10 flex -translate-y-1/2 items-center gap-2.5 sm:left-6 sm:gap-3 lg:left-8"
           onClick={(e) => {
             e.preventDefault()
             handleNav('hero')
@@ -35,17 +41,23 @@ export function Header() {
         >
           <img
             src={LOGO_SRC}
-            alt="UFA"
-            width={160}
-            height={48}
-            className="h-10 w-auto sm:h-12"
+            alt=""
+            width={70}
+            height={70}
+            className="h-[70px] w-[70px] shrink-0 object-contain drop-shadow-sm"
             loading="eager"
             decoding="async"
           />
+          <span className="flex flex-col text-[13px] font-bold leading-[1.1] tracking-[0.14em] text-slate-900 uppercase sm:text-sm">
+            <span>Urban</span>
+            <span>Fight</span>
+            <span>Academy</span>
+          </span>
+          <span className="sr-only">Urban Fight Academy</span>
         </a>
 
         <nav
-          className="hidden items-center justify-center gap-1 md:flex"
+          className="hidden flex-1 items-center justify-center gap-1 md:flex"
           aria-label="Main"
         >
           {navItems.map((item) => (
@@ -60,19 +72,22 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden justify-end md:flex">
+        <div className="ml-auto hidden shrink-0 md:block">
           <LanguageSwitcher />
         </div>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center justify-self-end rounded-md p-2 text-slate-700 md:hidden"
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-expanded={menuOpen}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="ml-auto flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-slate-700"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {menuOpen && (
@@ -93,9 +108,6 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <div className="mt-4 flex justify-center">
-            <LanguageSwitcher />
-          </div>
         </nav>
       )}
     </header>

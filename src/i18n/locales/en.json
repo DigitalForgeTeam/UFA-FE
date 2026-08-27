@@ -1,23 +1,132 @@
 {
   "nav": {
+    "about": "Who we are",
     "schedule": "Schedule",
+    "coaches": "Coaches",
     "home": "Home"
   },
   "hero": {
-    "title": "Gym & training hall",
-    "description": "Workouts for all levels. Flexible schedule and experienced coaches.",
-    "cta": "View schedule"
+    "carouselLabel": "Main banner",
+    "prev": "Previous slide",
+    "next": "Next slide",
+    "dot": "Slide {{n}}",
+    "slides": [
+      {
+        "title": "Urban Fight Academy",
+        "description": "Training for every level. A strong community and experienced coaches."
+      },
+      {
+        "title": "Flexible schedule",
+        "description": "Find a time that works for you — from beginners to advanced."
+      },
+      {
+        "title": "Body · Mind · Spirit",
+        "description": "More than a gym — a lifestyle and a team that backs you up."
+      }
+    ]
+  },
+  "about": {
+    "title": "Who we are",
+    "motto": "Body · Mind · Spirit",
+    "lead": "Urban Fight Academy is a martial arts gym in Bucharest built around real training — from your first class to competition level.",
+    "body": "For adults we offer Boxing, MMA, BJJ and Kickboxing, with beginners, advanced and pro groups. For kids — BJJ, Kickboxing, Judo and Karate. Individual training sessions are available. We welcome collaboration and are ready to open new groups. The first group session is free; we’ll refine the details with the club’s final info.",
+    "disciplinesTitle": "What we train",
+    "disciplines": {
+      "box": {
+        "name": "Boxing",
+        "note": "Morning & evening"
+      },
+      "mma": {
+        "name": "MMA",
+        "note": "Pro & beginners"
+      },
+      "bjj": {
+        "name": "BJJ",
+        "note": "Beginners & advanced"
+      },
+      "kickboxing": {
+        "name": "Kickboxing",
+        "note": "Evening sessions"
+      },
+      "sparring": {
+        "name": "Sparring",
+        "note": "Dedicated rounds"
+      }
+    },
+    "memberships": {
+      "title": "Memberships",
+      "subtitle": "Prices for 30 days. Check the gym schedule to choose your disciplines.",
+      "freeTrial": "First session is free",
+      "adultsTitle": "Adults",
+      "kidsTitle": "Kids",
+      "kidsNote": "Kids groups:",
+      "kidsPrice": "300 lei / discipline",
+      "discount6": "off on a 6-month membership",
+      "discount12": "off on a 12-month membership",
+      "seeSchedule": "View gym schedule",
+      "adults": {
+        "single": { "label": "1 entry", "price": "50 lei" },
+        "one": { "label": "1 discipline", "price": "300 lei" },
+        "two": { "label": "2 disciplines", "price": "450 lei" },
+        "unlimited": { "label": "General access", "price": "500 lei" }
+      },
+      "kidsDisciplines": {
+        "bjj": "BJJ",
+        "kickboxing": "Kickboxing",
+        "judo": "Judo",
+        "karate": "Karate"
+      }
+    }
   },
   "schedule": {
+    "eyebrow": "Schedule",
     "title": "Training schedule",
-    "placeholder": "Schedule content will be added soon."
+    "subtitle": "The weekly gym timetable. Pick the day and time that fit your discipline.",
+    "note": "The schedule may change. Contact the gym for the latest details.",
+    "prev": "Back",
+    "next": "Next",
+    "page": "{{current}} / {{total}}",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday"
+    },
+    "classes": {
+      "box": "Boxing",
+      "mmaPro": "MMA Pro",
+      "mmaBeginners": "MMA Beginners",
+      "bjjBeginners": "BJJ Beginners",
+      "bjjAdvanced": "BJJ Advanced",
+      "kickboxing": "Kickboxing",
+      "sparringMmaPro": "Sparring MMA Pro",
+      "sparringKickboxing": "Sparring Kickboxing",
+      "sparringBjj": "Sparring BJJ"
+    }
+  },
+  "coaches": {
+    "title": "Coaches",
+    "subtitle": "The coaching team — names and photos will be updated with the club’s details.",
+    "prev": "Previous coaches",
+    "next": "Next coaches",
+    "dot": "Group {{n}}",
+    "list": [
+      { "name": "Boxing coach", "role": "Boxing coach" },
+      { "name": "MMA coach", "role": "MMA coach" },
+      { "name": "BJJ coach", "role": "BJJ coach" },
+      { "name": "Kickboxing coach", "role": "Kickboxing coach" },
+      { "name": "Kids coach", "role": "Kids groups coach" }
+    ]
   },
   "footer": {
     "contacts": "Contacts",
-    "phones": "Phones",
+    "phones": "Phone",
     "social": "Social media",
     "address": "Gym address",
-    "mapTitle": "Gym location"
+    "mapTitle": "Gym location",
+    "copied": "Copied",
+    "copyHint": "Click to copy"
   },
   "lang": {
     "ro": "RO",
